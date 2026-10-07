@@ -1,0 +1,146 @@
+{
+  "source": "Microban imitation RL authored local snapshot, 2026-10-07",
+  "files": [
+    {
+      "path": "src/microban_rl/__init__.py",
+      "source": "src/microban_rl/__init__.py",
+      "sha256": "108826110384fe48403b6408bead7785c3c6eb71fee542edca9071149e5ddb63"
+    },
+    {
+      "path": "src/microban_rl/one_leg.py",
+      "source": "src/microban_rl/one_leg.py",
+      "sha256": "b9b2f95adae88fea16dcf9f9c46cb70c221dd23fae6231e1e577030d3a87fe9e"
+    },
+    {
+      "path": "src/microban_rl/one_leg_warp.py",
+      "source": "src/microban_rl/one_leg_warp.py",
+      "sha256": "238f7c8393a45f3b88f15b4a6d9da1adf06e952caadbf9b28f8606ef74c9e144"
+    },
+    {
+      "path": "scripts/one_leg_text_reference.py",
+      "source": "scripts/one_leg_text_reference.py",
+      "sha256": "55226407004b7acb1590277012d244803b3c532768d3aab0008a353ff4edc548"
+    },
+    {
+      "path": "scripts/one_leg_run.py",
+      "source": "scripts/one_leg_run.py",
+      "sha256": "58572117075a35ae9b6c9645ea3b1296a4d0616f6504836f995d5ebe9d6dae43"
+    },
+    {
+      "path": "scripts/one_leg_warp_run.py",
+      "source": "scripts/one_leg_warp_run.py",
+      "sha256": "7194b77320cb238951926174adab26d6e16c8a551c464f4ee6f5d6a6f6e690eb"
+    },
+    {
+      "path": "scripts/relocate_visual_paths.py",
+      "source": "scripts/relocate_visual_paths.py",
+      "sha256": "3a97b58bf2ce8312c9f6ccb4c0df787edc3979cc7ffc80f05e123ed90387e710"
+    },
+    {
+      "path": "assets/microban.xml",
+      "source": "assets/microban.xml",
+      "sha256": "132c061b3fa5af43472bd370ff1f1bd05e18408e26838a8b9a60822876607662"
+    },
+    {
+      "path": "assets/one_leg/scene.xml",
+      "source": "assets/one_leg/scene.xml",
+      "sha256": "f17429f96f9720acada05cddd12c6660bd8330f1f89b639d52298bc993db594d"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/oneleg_text_00.csv",
+      "source": "data/kimodo_text_oneleg/oneleg_text_00.csv",
+      "sha256": "56621d12162f6055aef4151e5642fd996d5d29d295c56733f2387970e526411f"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/oneleg_text_00.npz",
+      "source": "data/kimodo_text_oneleg/oneleg_text_00.npz",
+      "sha256": "bc1e122c51def218582de89ff3edd5b7e46dd01fc1b55d9c388febe8d5e2e3b7"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/csv_columns.json",
+      "source": "data/kimodo_text_oneleg/csv_columns.json",
+      "sha256": "6b8f4ee3a127fb9ebe5e66b9db29faa2c4c44db0edc3b2cd6a359daa91ddeb21"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/request.json",
+      "source": "data/kimodo_text_oneleg/request.json",
+      "sha256": "522956fb5de69efc06d1944365d77943196118702b0dad056e53dba7124544c7"
+    }
+  ],
+  "changes": [
+    "NPZ bytes omitted; original hash retained in retarget source",
+    "request JSON reduced to three consumed fields",
+    "XML paths replaced by LESSON_ROOT templates",
+    "only one-leg environment and runners included"
+  ],
+  "distributed_files": [
+    {
+      "path": "requirements.txt",
+      "sha256": "044ae5ea97e926bd7bd1097bed55f3be36e42d9aaeae3befc16d12899c960f40"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f7bb09f35eee313e2460123db5970e9bfe6af8575da6e1cf03d3391833555c1f"
+    },
+    {
+      "path": "requirements-gpu.txt",
+      "sha256": "4aee1c53db022f363f4eadc15a36c7aca41cb1fd62e995a854cb6d8532baba0e"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/oneleg_text_00.csv",
+      "sha256": "56621d12162f6055aef4151e5642fd996d5d29d295c56733f2387970e526411f"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/csv_columns.json",
+      "sha256": "6b8f4ee3a127fb9ebe5e66b9db29faa2c4c44db0edc3b2cd6a359daa91ddeb21"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/request.json",
+      "sha256": "44a76db6541f9ca252b34dfc4fbdb0a0590f189920b6a440c44acba2dedce0dc"
+    },
+    {
+      "path": "src/microban_rl/one_leg.py",
+      "sha256": "b9b2f95adae88fea16dcf9f9c46cb70c221dd23fae6231e1e577030d3a87fe9e"
+    },
+    {
+      "path": "src/microban_rl/one_leg_warp.py",
+      "sha256": "238f7c8393a45f3b88f15b4a6d9da1adf06e952caadbf9b28f8606ef74c9e144"
+    },
+    {
+      "path": "src/microban_rl/__init__.py",
+      "sha256": "108826110384fe48403b6408bead7785c3c6eb71fee542edca9071149e5ddb63"
+    },
+    {
+      "path": "scripts/one_leg_run.py",
+      "sha256": "58572117075a35ae9b6c9645ea3b1296a4d0616f6504836f995d5ebe9d6dae43"
+    },
+    {
+      "path": "scripts/prepare_model.py",
+      "sha256": "7cc34e5d9ca2d0cabbc2967780084d90a3766a04ff8fbc08af025bc33fdba0b8"
+    },
+    {
+      "path": "scripts/one_leg_warp_run.py",
+      "sha256": "7194b77320cb238951926174adab26d6e16c8a551c464f4ee6f5d6a6f6e690eb"
+    },
+    {
+      "path": "scripts/one_leg_text_reference.py",
+      "sha256": "ba34aa164b20c52bcb48b87615a31df2f5e84bd37e2b0c166e73b65f5db66dbd"
+    },
+    {
+      "path": "scripts/setup.sh",
+      "sha256": "6a5ffd72699e49ce1cbfbf1f2dd1a39c78a6fc1d5ab7a2fb45b29975cb872314"
+    },
+    {
+      "path": "scripts/practice.sh",
+      "sha256": "59aafd598a53ff37c0d6219aee002180d1ab105bd45f06a219272f9bb83714ce"
+    },
+    {
+      "path": "assets/microban.xml.in",
+      "sha256": "fa50866d14264b96e2e8dcd22dde089fa6f4b8053189b24ef68b566ab415dd39"
+    },
+    {
+      "path": "assets/one_leg/scene.xml.in",
+      "sha256": "5394d84117b8f2ab6a85b579c6090b7b15f28a0d18e87d99ccad50dbf56d4b62"
+    }
+  ]
+}

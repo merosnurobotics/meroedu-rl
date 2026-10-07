@@ -1,0 +1,13 @@
+.venv*/
+__pycache__/
+*.py[cod]
+**/datasets/
+**/runs/
+**/vendor/
+*.pt
+*.onnx
+*.engine
+.env*
+**/assets/*.xml
+**/assets/one_leg/*.xml
+**/assets/visual_path_relocation.json
