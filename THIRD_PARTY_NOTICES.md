@@ -11,4 +11,4 @@
 | NumPy / SciPy | 수치 계산·자세 최적화 | 각 설치 패키지의 BSD 계열 고지 |
 | ImageIO / Pillow / 영상 코덱 | 선택적 영상 렌더링 기능의 설치 의존성 | 각 설치 패키지의 LICENSE 및 코덱별 고지 |
 
-`lessons/01-one-leg/data/kimodo_text_oneleg/oneleg_text_00.csv`는 NVIDIA 공식 Kimodo 공개 서비스에서 생성한 참조 출력입니다. 원본 NPZ는 포함하지 않고 SHA256만 기록합니다. 입력 JSON은 CSV 열 이름과 최소 생성 요청(모델명·서비스 코드 커밋·문장)입니다. 서비스의 정확한 런타임 모델 바이트 해시는 공개되지 않아 서비스 커밋과 모델명만으로 그 해시를 증명하지 않습니다.
+`lessons/01-one-leg/data/kimodo_text_oneleg/oneleg_text_00_mujoco_rest_zero.csv`는 NVIDIA 공식 Kimodo 공개 서비스에서 생성한 참조 출력입니다. 원본 NPZ는 포함하지 않고 SHA256만 기록합니다. 입력 JSON은 CSV 열 이름과 최소 생성 요청(모델명·서비스 코드 커밋·문장)입니다. 서비스의 정확한 런타임 모델 바이트 해시는 공개되지 않아 서비스 커밋과 모델명만으로 그 해시를 증명하지 않습니다.

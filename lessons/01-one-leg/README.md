@@ -27,25 +27,23 @@ bash scripts/practice.sh smoke
 
 참조 출력은 `runs/reference/reference.json`, 첫 1회 PPO 출력은 `runs/smoke/policy_final.pt`입니다. **1회 업데이트로 균형 성능을 기대하지 마세요.** 실행 연결 확인용입니다. 참조 폴더가 이미 있으면 스크립트가 재생성을 거부합니다. 기존 작업을 보존하고 새 출력 경로를 사용하세요.
 
-## 학습·평가
+## GPU 학습·CPU 교차 평가
+
+CPU smoke는 실행 확인용입니다. 사이트의 본 학습은 CPU 정책에서 추가 학습하는 방식이 아니라, 미학습 신경망과 균형 피드백에서 시작한 GPU PPO 400회입니다.
 
 ```bash
+# GPU용 환경을 선택해서 설치합니다.
+bash scripts/setup.sh gpu
+bash scripts/practice.sh initialize
 bash scripts/practice.sh train
 bash scripts/practice.sh evaluate
 ```
 
-train은 CPU 물리 환경 64개, PPO 460회입니다. 오래 걸릴 수 있습니다. 처음에는 `scripts/one_leg_run.py --help`를 읽고 적은 반복 수와 새 출력 폴더를 쓰세요.
+initialize는 seed 731로 신경망을 새로 만들고 해석적 균형 계수를 기록합니다. train은 MuJoCo Warp 물리 환경 64개, rollout32, 학습률0.0001, seed75401로 PPO400회(819,200 transitions)를 실행합니다. 균형 피드백은 고정하고 신경망 잔차·가치함수·행동 분포를 학습합니다. 외력은 넣지 않습니다.
 
-평가는 학습과 다른 seed 74201의 64개 초기조건에서 18초와 1N 외란을 사용합니다. 성공률뿐 아니라 넘어진 시점·발 접촉·토크·평가 조건도 함께 확인합니다. 모델과 reference의 SHA256을 저장하므로 다른 참조를 무심코 섞으면 실행을 거부합니다.
+evaluate는 다른 seed75501의 64개 초기 상태로 양발→왼발 전환을 GPU와 Native MuJoCo에서 각각 18초 평가합니다. 넘어짐·발 접촉·토크·평가 조건을 함께 확인합니다. 결과는 runs/gpu, runs/eval-gpu, runs/eval-native에 저장합니다. 사이트의64/64는 보존된 원 실험 결과이며 이 패키징에서 다시 측정한 수치가 아닙니다. 하드웨어 검증 결과도 아닙니다.
 
-```bash
-# 별도 GPU 환경으로 시작하려면 setup 단계부터 gpu를 선택합니다.
-bash scripts/setup.sh gpu
-# CPU 학습으로 초기 정책을 만든 뒤 실제 GPU 물리에서 추가 학습
-bash scripts/practice.sh gpu
-```
-
-GPU 단계는 `runs/native/policy_final.pt`에서 120회 추가 학습하며 `runs/gpu/policy_final.pt`를 만듭니다. 이는 사이트에 보존된 사례를 따라가는 학습 절차이며 같은 수치 성능이나 바이트 단위 재현을 보장하지 않습니다. 사이트의 예전 외란 전·후 영상에는 피드백 계수 변경도 포함되어 있어 외란 학습 단독 효과로 해석하지 않습니다.
+CSV는 G1 MuJoCo rest-zero 변환본을 사용하고, 자세 변환의 lift-scale은2.8입니다. 경로가 다른 새 머신에서 참조를 재생성하므로 가중치나 참조의 바이트 단위 동일성을 보장하지 않습니다. 작은 smoke와 달리 GPU 본 학습은 장시간 작업이므로 장비를 먼저 확인하세요.
 
 ## 읽을 코드
 
@@ -58,4 +56,4 @@ GPU 단계는 `runs/native/policy_final.pt`에서 120회 추가 학습하며 `ru
 
 영상·웹페이지는 저장소 밖의 교육 사이트에서 읽습니다. 실행에 필요한 소스와 입력만 담았습니다. 원 NPZ는 해시 확인에만 쓰여 제외했고, 원본 해시 값은 참조 생성 코드에 유지했습니다. 서비스 전체 기록도 필요한 세 필드만 남겼습니다. 입력 CSV 출처 및 코드 SHA256은 `UPSTREAM.json`, 라이선스는 루트의 THIRD_PARTY_NOTICES.md를 확인합니다. 로봇 모델은 원본 Apache-2.0 고지를 그대로 유지합니다.
 
-패키징 검증은 소스 컴파일과 XML 경로 검사, 참조 재생성, CPU 1회 PPO에 한정합니다. 전체 460회/120회 학습이나 새 실제 로봇 검증을 완료했다는 뜻은 아닙니다.
+패키징 검증은 소스 컴파일과 XML 경로 검사, 참조 재생성, CPU 1회 PPO에 한정합니다. 전체 GPU 400회 학습이나 새 실제 로봇 검증을 완료했다는 뜻은 아닙니다.

@@ -71,7 +71,9 @@
     "NPZ bytes omitted; original hash retained in retarget source",
     "request JSON reduced to three consumed fields",
     "XML paths replaced by LESSON_ROOT templates",
-    "only one-leg environment and runners included"
+    "only one-leg environment and runners included",
+    "Align current lesson with rest-zero CSV and lift-scale2.8",
+    "Fresh initializer followed by quiet GPU PPO400; removed historical disturbance training recipe"
   ],
   "distributed_files": [
     {
@@ -80,15 +82,19 @@
     },
     {
       "path": "README.md",
-      "sha256": "f7bb09f35eee313e2460123db5970e9bfe6af8575da6e1cf03d3391833555c1f"
+      "sha256": "36f4dbf14221634fd1aa71aaa8b90ef873d4fa057e9e758f2c7838702d2312a5"
     },
     {
       "path": "requirements-gpu.txt",
       "sha256": "4aee1c53db022f363f4eadc15a36c7aca41cb1fd62e995a854cb6d8532baba0e"
     },
     {
-      "path": "data/kimodo_text_oneleg/oneleg_text_00.csv",
-      "sha256": "56621d12162f6055aef4151e5642fd996d5d29d295c56733f2387970e526411f"
+      "path": "VALIDATION.md",
+      "sha256": "ca31355fd5f1635a633c877f958cd895037aa7a9f12d955a2a93ee6d1f916024"
+    },
+    {
+      "path": "data/kimodo_text_oneleg/oneleg_text_00_mujoco_rest_zero.csv",
+      "sha256": "5dea6a4065399846b18a890fd77483e09d98e7fb152d14039d9e2f18b6f846a7"
     },
     {
       "path": "data/kimodo_text_oneleg/csv_columns.json",
@@ -132,7 +138,11 @@
     },
     {
       "path": "scripts/practice.sh",
-      "sha256": "59aafd598a53ff37c0d6219aee002180d1ab105bd45f06a219272f9bb83714ce"
+      "sha256": "79fe346ddf6b0415e3e049e4120d42958c59b05367f4800697e33f4d569eed7e"
+    },
+    {
+      "path": "scripts/initialize_policy.py",
+      "sha256": "daef0173ba9e9147d36fe853fd4e2e06062f56a5c0ffc26957b77c6a704c1761"
     },
     {
       "path": "assets/microban.xml.in",
