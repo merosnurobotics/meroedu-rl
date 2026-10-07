@@ -128,7 +128,7 @@
     },
     {
       "path": "scripts/setup.sh",
-      "sha256": "6a5ffd72699e49ce1cbfbf1f2dd1a39c78a6fc1d5ab7a2fb45b29975cb872314"
+      "sha256": "c9fd0395b0956fd050623cc98561f59aa82a88e29a257ae7f782459bb340479c"
     },
     {
       "path": "scripts/practice.sh",
