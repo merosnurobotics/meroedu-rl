@@ -3,6 +3,7 @@
 set -euo pipefail
 LESSON_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
 cd "$LESSON_ROOT"
+case "${1:-cpu}" in cpu|gpu) ;; *) echo "Usage: bash scripts/setup.sh [cpu|gpu]" >&2; exit 1 ;; esac
 command -v git >/dev/null
 command -v python3.12 >/dev/null
 MODEL_COMMIT=d594a6088bb7b6600fe8098321169031fbca680c
